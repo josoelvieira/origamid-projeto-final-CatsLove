@@ -1,4 +1,39 @@
-input {
+* {
+    box-sizing: border-box;
+
+}
+body {
+    padding-top: 5rem;
+    margin: 0px;
+    color:#333;
+    --type-firts: Helvetica, Arial, sans-serif;
+    --type-second: 'Spectral', Georgia;
+    font-family: var(--type-firts);
+}
+h1,h2,h3,h4,p {
+    margin:0;
+}
+ul,li {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+button, input {
     display:block;
-    margin-bottom:1rem;
+    font-size: 1rem;
+    font-family: var(--type-firts);
+    color:#333;
+}
+a {
+    text-decoration: none;
+    color:#333;
+}
+.container {
+    max-width: 50rem;
+    padding: 0 1rem;
+    margin:0 auto;
 }
