@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useForm from '../../Hooks/useForm';
 
 const LoginForm = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
+    const username = useForm()
+    const password = useForm()
 
     function handleSubmit(event) { 
       event.preventDefault();
@@ -29,13 +30,12 @@ const LoginForm = () => {
             <form action="" onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    value={username}
-                    onChange={({ target }) => setUsername(target.value)}
+                   {...username}
                 />
                 <input
                     type="password"
-                    value={password}
-                    onChange={({ target }) => setPassword(target.value)}
+                    {...password}
+                    
                 />
                 <button>Entrar</button>
             </form>
