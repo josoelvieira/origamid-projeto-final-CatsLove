@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { createContext } from 'react'
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET} from './api'
+import { useNavigate } from 'react-router-dom'
 
 export const UserContext = createContext()
 
@@ -10,6 +11,7 @@ export const UserStorage = ({ children }) => {
   const [login, setLogin] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const navigate = useNavigate()
 
 
   useEffect(() =>{
@@ -46,10 +48,11 @@ async function userLogin (username, password) {
     setLoading(true)
   const {url, options} = TOKEN_POST({username, password})
   const tokenRes = await fetch(url, options)
-  if(!tokenRes.ok) throw new Error(`Error: ${tokenRes.statusText}`)
+  if(!tokenRes.ok) throw new Error(`Error: Usuario invalido`)
   const {token} = await tokenRes.json()
   window.localStorage.setItem('token', token)
-  getUser(token)
+  await getUser(token)
+  navigate('./conta')
   } catch (err) {
     setError(err.message)
     setLogin(false)
@@ -63,7 +66,8 @@ async function userLogout() {
   setLoading(false)
   setLogin(false)
   window.localStorage.removeItem('token')
+  navigate('./login')
 }
 
-  return <UserContext.Provider value={{userLogin, data,userLogout}}>{children}</UserContext.Provider>
+  return <UserContext.Provider value={{userLogin, data, userLogout, error, loading, login}}>{children}</UserContext.Provider>
 }
