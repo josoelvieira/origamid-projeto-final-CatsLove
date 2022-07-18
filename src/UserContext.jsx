@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { useState } from 'react'
 import { createContext } from 'react'
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET} from './api'
@@ -13,7 +13,15 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = useState(null)
   const navigate = useNavigate()
 
-
+  const userLogout = useCallback(async function () {
+    setData(null)
+    setError(null)
+    setLoading(false)
+    setLogin(false)
+    window.localStorage.removeItem('token')
+    navigate('./login')
+  },[navigate])
+  
   useEffect(() =>{
     async function autoLogin() {
       const token = window.localStorage.getItem('token')
@@ -32,7 +40,8 @@ export const UserStorage = ({ children }) => {
       }
       }}
     autoLogin()
-  },[])
+  },[userLogout])
+
 async function getUser (token) {
   const {url, options} = USER_GET(token)
   const response = await fetch(url, options)
@@ -59,14 +68,6 @@ async function userLogin (username, password) {
   } finally {
     setLoading(false)
   }
-}
-async function userLogout() {
-  setData(null)
-  setError(null)
-  setLoading(false)
-  setLogin(false)
-  window.localStorage.removeItem('token')
-  navigate('./login')
 }
 
   return <UserContext.Provider value={{userLogin, data, userLogout, error, loading, login}}>{children}</UserContext.Provider>
