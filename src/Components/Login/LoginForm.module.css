@@ -1,5 +1,6 @@
 .form{
     margin-bottom: 2rem;
+    display: grid;
 }
 .perdeu {
     display: inline-block;
