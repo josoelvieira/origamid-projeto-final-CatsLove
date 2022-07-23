@@ -21,11 +21,11 @@
 .nav button:hover,
 .nav button:focus{
     background: white;
-    box-shadow: 0 0 0 3px rgb(17, 168, 255);
+    box-shadow: 0 0 0 3px rgb(146, 166, 233);
     outline: none;
 }
 .nav a.active {
-    background: white;
-    box-shadow: 0 0 0 3px rgb(146, 191, 233);
-    border-color: aquamarine;
+    background: rgb(189, 26, 26);
+    box-shadow: 0 0 0 3px rgb(169, 231, 23);
+    border-color: rgb(31, 177, 128);
 }
