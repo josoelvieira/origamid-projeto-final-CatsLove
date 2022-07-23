@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Navigate, Route } from 'react-router-dom'
 import { UserContext } from '../../UserContext'
 
-const ProtectedRouter = (props) => {
+const ProtectedRoute = (props) => {
     const { login } = useContext(UserContext)
 
     if(login === true)  return <Route {...props}/>
@@ -10,4 +10,4 @@ const ProtectedRouter = (props) => {
     else return null
 }
 
-export default ProtectedRouter
+export default ProtectedRoute
