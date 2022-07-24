@@ -7,15 +7,18 @@ import { ReactComponent as Estats } from "../../Assets/estatisticas.svg";
 import { ReactComponent as EnviarAdd } from "../../Assets/enviar.svg";
 import { ReactComponent as Sair } from "../../Assets/sair.svg";
 import styles from "./UserHeaderNav.module.css";
-import { useState } from "react";
 import useMedia from '../../Hooks/useMedia';
+import { useState } from "react";
 
 const UserHeaderNav = () => {
     const mobile = useMedia('(max-width: 40rem')
-
     const { userLogout } = useContext(UserContext);
+    const [ mobileMenu, setMobilMenu] = useState(false)
     
-    return (
+    return (<>
+    {mobile && (<button aria-label="menu" onClick={() => setMobilMenu(!mobileMenu)} className={`${styles.mobileButton} ${mobileMenu && styles.mobileButtonActive
+            }`}></button>)}
+        
         <nav className={styles.nav}>
             <NavLink to="/conta" end exact activeClassName={styles.active}>
                 <MinhasFotos />
@@ -33,11 +36,12 @@ const UserHeaderNav = () => {
                 <EnviarAdd />
                 {mobile && "Enviar"}
             </NavLink>
-            <button className="stylesBtn" onClick={userLogout}>
+            <button className={styles.stylesBtn} onClick={userLogout}>
                 <Sair />
                 {mobile && "Sair"}
             </button>
         </nav>
+        </>
     );
 };
 
