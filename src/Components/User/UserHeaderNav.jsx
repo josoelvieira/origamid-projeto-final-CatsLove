@@ -8,9 +8,10 @@ import { ReactComponent as EnviarAdd } from "../../Assets/enviar.svg";
 import { ReactComponent as Sair } from "../../Assets/sair.svg";
 import styles from "./UserHeaderNav.module.css";
 import { useState } from "react";
+import useMedia from '../../Hooks/useMedia';
 
 const UserHeaderNav = () => {
-    const [mobile, stMobile] = useState(null);
+    const mobile = useMedia('(max-width: 40rem')
 
     const { userLogout } = useContext(UserContext);
     
