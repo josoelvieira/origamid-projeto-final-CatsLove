@@ -1,12 +1,12 @@
 .nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap:1rem;
+    gap: 1rem;
 }
 .nav a,
 .nav button {
     background: #eee;
-    border-radius: .2rem;
+    border-radius: 0.2rem;
     height: 40px;
     width: 40px;
     display: flex;
@@ -19,13 +19,11 @@
 .nav a:hover,
 .nav a:focus,
 .nav button:hover,
-.nav button:focus{
-    background: white;
+.nav button:focus {
+    background: #ffffff;
     box-shadow: 0 0 0 3px rgb(146, 166, 233);
     outline: none;
 }
-.nav a.active {
-    background: rgb(189, 26, 26);
-    box-shadow: 0 0 0 3px rgb(169, 231, 23);
-    border-color: rgb(31, 177, 128);
+.nav a.active > * {
+    fill:rgb(207, 233, 146);
 }

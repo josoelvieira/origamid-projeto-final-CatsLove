@@ -13,17 +13,22 @@ const UserHeaderNav = () => {
     const [mobile, stMobile] = useState(null);
 
     const { userLogout } = useContext(UserContext);
+    
     return (
         <nav className={styles.nav}>
-            <NavLink to="/conta" end activeClassName={styles.active}>
+            <NavLink to="/conta" end exact activeClassName={styles.active}>
                 <MinhasFotos />
                 {mobile && "Minhas Fotos"}
             </NavLink>
-            <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
+            <NavLink
+                to="/conta/estatisticas"
+                exact
+                activeClassName={styles.active}
+            >
                 <Estats />
                 {mobile && "Minhas estatisticas"}
             </NavLink>
-            <NavLink to="/conta/postar" activeClassName={styles.active}>
+            <NavLink to="/conta/postar" exact activeClassName={styles.active}>
                 <EnviarAdd />
                 {mobile && "Enviar"}
             </NavLink>
