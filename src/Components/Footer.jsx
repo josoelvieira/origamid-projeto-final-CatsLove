@@ -4,7 +4,7 @@ import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <div className={styles.footer}>Cat Love</div>
+    <div className={styles.footer}>Cats Love - Todos direitos resevados</div>
   )
 }
 

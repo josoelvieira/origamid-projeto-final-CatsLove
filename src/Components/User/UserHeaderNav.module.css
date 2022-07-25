@@ -27,7 +27,7 @@
     color: rgb(146, 166, 233);
 }
 .nav a.active > * {
-    fill:rgb(207, 233, 146);
+    fill: rgb(207, 233, 146);
 }
 .mobileButton {
     background: #eee;
@@ -42,17 +42,67 @@
     cursor: pointer;
 }
 .mobileButton::after {
-    content: '';
+    content: "";
     display: block;
     width: 1.2rem;
     height: 2px;
     background: currentColor;
     box-shadow: 0 6px currentColor, 0 -6px currentColor;
+    transition: 0.2s;
 }
 .mobileButton:focus,
-.mobileButton:hover {
+.mobileButton:hover,
+.mobileButtonActive {
     outline: none;
     background: #ffffff;
     box-shadow: 0 0 0 3px rgb(146, 166, 233);
     color: rgb(146, 166, 233);
+}
+.mobileButtonActive::after {
+    transform: rotate(90deg);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+.navMobile {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    padding: 0 1rem;
+    background: white;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0.2rem;
+    transform: translateX(-10px);
+    opacity: 0;
+    pointer-events: none;
+}
+.navMobileActive {
+    transition: .3s;
+    transform: initial;
+    opacity: 1;
+    pointer-events: initial;
+    z-index: 100;
+}
+.navMobile a,
+.navMobile button {
+    display: flex;
+    align-items: center;
+    background: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
+.navMobile a:hover svg > *,
+.navMobile button:hover svg > *{
+    fill:rgb(146, 166, 233) ;
+}
+.navMobile button {
+    border: none;
+}
+.navMobile svg {
+    margin-right: 0.5rem;
 }
