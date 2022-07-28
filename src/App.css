@@ -39,6 +39,9 @@ a {
     padding: 0 1rem;
     margin:0 auto;
 }
+.mainContainer {
+    margin-top: 4rem;
+}
 .title {
     font-family:  var(--type-second);
     line-height: 1;
@@ -50,14 +53,14 @@ a {
 .title::after {
     content: "";
     display: block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: .5rem;
+    height: 3rem;
     background: rgb(17, 168, 255);
     position: absolute;
     bottom: 5px;
     left: -5px;
-    border-radius: 0.2rem;
     z-index: -1;
+    margin-left: -0.5rem;
 }
 .animeLeft {
     opacity: 0;
