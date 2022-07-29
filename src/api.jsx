@@ -19,7 +19,7 @@ export function TOKEN_VALIDATE_POST(token) {
     options: {
       method: 'POST',
       headers: {
-        Authorization: 'Bearer ' + token, 
+        Authorization: 'Bearer ' + token,
       },
     },
   };
@@ -36,6 +36,7 @@ export function USER_GET(token) {
     },
   };
 }
+
 export function USER_POST(body) {
   return {
     url: API_URL + '/api/user',
@@ -48,6 +49,7 @@ export function USER_POST(body) {
     },
   };
 }
+
 export function PHOTO_POST(formData, token) {
   return {
     url: API_URL + '/api/photo',
@@ -60,12 +62,23 @@ export function PHOTO_POST(formData, token) {
     },
   };
 }
-export function PHOTOS_GET({page, total, user}) {
+
+export function PHOTOS_GET({ page, total, user }) {
   return {
-    url: `${API_URL}/api/photo/?_page=${page}&+total=${total}&_user=${user}`,
+    url: `${API_URL}/api/photo/?_page=${page}&_total=${total}&_user=${user}`,
     options: {
       method: 'GET',
-      cache: 'no-store'
+      cache: 'no-store',
+    },
+  };
+}
+
+export function PHOTO_GET(id) {
+  return {
+    url: `${API_URL}/api/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
     },
   };
 }

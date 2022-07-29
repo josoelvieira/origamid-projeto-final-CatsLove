@@ -7,13 +7,13 @@ import Error from "../Helper/Error";
 import Loanding from "../Helper/Loanding";
 import styles from './FeedPhoto.module.css'
 
-const FeedPhotos = () => {
+const FeedPhotos = ({setModalPhoto}) => {
     const { data, loanding, error, request } = useFetch();
     useEffect(() => {
         async function fetchPhotos() {
             const { url, options } = PHOTOS_GET({ page: 1, total: 12, user: 0 });
-            const {  json } = await request(url, options);
-            console.log(json);
+            const { json } = await request(url, options);
+            console.log(json)
         }
         fetchPhotos();
     }, [request]);
@@ -24,7 +24,7 @@ const FeedPhotos = () => {
             <div>
                 <ul className={`${styles.feed} animeLeft`}>
                 {data.map((photo) => (
-                    <FeedPhotosItem key={photo.id} photo={photo} />
+                    <FeedPhotosItem key={photo.id} photo={photo} setModalPhoto={setModalPhoto}/>
                 ))}
                 </ul>
             </div>
