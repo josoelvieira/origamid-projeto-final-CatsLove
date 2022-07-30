@@ -1,32 +1,38 @@
-import React, { useState } from 'react'
-import { COMMENT_POST } from '../../api';
-import { ReactComponent as Enviar } from '../../Assets/enviar.svg'
+import React, { useState }from 'react';
+import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
 import useFetch from '../../Hooks/useFetch';
+import Error from '../Helper/Error';
+import { COMMENT_POST } from '../../api';
 
-const PhotoCommentsForm = ({id}) => {
-  const [comment, setComment] = useState('')
-  const { request, error } = useFetch()
-
+const PhotoCommentsForm = ({ id, setComments }) => {
+  const [comment, setComment] = useState('');
+  const { request, error } = useFetch();
 
   async function handleSubmit(event) {
-    event.preventDefault()
-    const {url, options} = COMMENT_POST(id, {comment})
-    await request (url, options)
+    event.preventDefault();
+    const { url, options } = COMMENT_POST(id, { comment });
+    const { response, json } = await request(url, options);
+    if (response.ok) {
+      setComment('');
+      setComments((comments) => [...comments, json]);
+    }
   }
 
   return (
-    <div>
-      <form action="">
-        <textarea
+    <form onSubmit={handleSubmit}>
+      <textarea
         id="comment"
         name="comment"
-        placeholder='Comente...'
+        placeholder="Comente..."
         value={comment}
-        onChange={({target}) => setComment(target.value)}/>
-        <button><Enviar/></button>
-      </form>
-    </div>
-  )
-}
+        onChange={({ target }) => setComment(target.value)}
+      />
+      <button>
+        <Enviar />
+      </button>
+      <Error error={error} />
+    </form>
+  );
+};
 
-export default PhotoCommentsForm
+export default PhotoCommentsForm;
