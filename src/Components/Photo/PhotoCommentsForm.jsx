@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { ReactComponent as Enviar } from '../../Assets/enviar.svg';
+import { ReactComponent as Enviar } from '../../Assets/chat-message-cat-svgrepo-com.svg';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Helper/Error';
 import { COMMENT_POST } from '../../api';
@@ -30,7 +30,7 @@ const PhotoCommentsForm = ({ id, setComments }) => {
         value={comment}
         onChange={({ target }) => setComment(target.value)}
       />
-      <button className={styles.botton}>
+      <button className={styles.button}>
         <Enviar />
       </button>
       <Error error={error} />

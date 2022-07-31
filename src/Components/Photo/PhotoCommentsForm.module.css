@@ -21,3 +21,36 @@
     outline: none;
     border-color: rgb(17, 168, 255);
 }
+.button {
+    border:none ;
+    cursor: pointer;
+    color: #333;
+    background: transparent;
+    font-size: 1rem;
+    padding: 0 1rem;
+    overflow: hidden;
+}
+.button:focus svg path,
+.button:hover svg path{
+    fill:rgb(167, 214, 241);
+    stroke: rgb(17, 168, 255);
+}
+.button:focus svg ellipse,
+.button:hover svg ellipse {
+    fill:rgb(167, 214, 241);
+    stroke: rgb(17, 168, 255)
+}
+.button:focus svg path,
+.button:hover svg path,
+.button:focus svg ellipse,
+.button:hover svg ellipse {
+    animation: piscar .6s infinite;
+}
+@keyframes piscar {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

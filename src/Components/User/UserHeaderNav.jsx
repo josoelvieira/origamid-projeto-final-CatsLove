@@ -4,7 +4,7 @@ import { UserContext } from "../../UserContext";
 import { useContext } from "react";
 import { ReactComponent as MinhasFotos } from "../../Assets/feed.svg";
 import { ReactComponent as Estats } from "../../Assets/estatisticas.svg";
-import { ReactComponent as EnviarAdd } from "../../Assets/enviar.svg";
+import { ReactComponent as EnviarAdd } from "../../Assets/pussy-cat-cartoon-outline-variant-svgrepo-com.svg";
 import { ReactComponent as Sair } from "../../Assets/sair.svg";
 import styles from "./UserHeaderNav.module.css";
 import useMedia from "../../Hooks/useMedia";
@@ -56,7 +56,7 @@ const UserHeaderNav = () => {
                     activeClassName={styles.active}
                 >
                     <EnviarAdd />
-                    {mobile && "Enviar"}
+                    {mobile && "Add foto"}
                 </NavLink>
                 <button className={styles.stylesBtn} onClick={userLogout}>
                     <Sair />

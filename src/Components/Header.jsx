@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { ReactComponent as Dogs } from "../Assets/logo.svg";
+import { ReactComponent as Cats } from "../Assets/cat-svgrepo-com.svg";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
@@ -14,7 +14,7 @@ const Header = () => {
                     to="/"
                     aria-label="Cats Love - Home"
                 >
-                    <Dogs />
+                    <Cats />
                 </Link>
                 {data ? (
                     <Link className={styles.login} to="/conta">
