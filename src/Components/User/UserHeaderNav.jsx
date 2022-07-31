@@ -40,7 +40,7 @@ const UserHeaderNav = () => {
             >
                 <NavLink to="/conta" end exact activeClassName={styles.active}>
                     <MinhasFotos />
-                    {mobile && "Minhas Fotos"}
+                    {mobile && "Fotos"}
                 </NavLink>
                 <NavLink
                     to="/conta/estatisticas"
@@ -48,7 +48,7 @@ const UserHeaderNav = () => {
                     activeClassName={styles.active}
                 >
                     <Estats />
-                    {mobile && "Minhas estatisticas"}
+                    {mobile && "Estatisticas"}
                 </NavLink>
                 <NavLink
                     to="/conta/postar"
