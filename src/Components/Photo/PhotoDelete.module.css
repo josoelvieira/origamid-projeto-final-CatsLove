@@ -1,0 +1,16 @@
+.delete {
+    background: #ddd;
+    padding: .3rem .6rem;
+    line-height: 1;
+    border: 1px solid transparent;
+    font-size: .875rem;
+    font-family: var(--type-first);
+    cursor: pointer;
+    border-radius: .4rem;
+    transition: .1s;
+}
+.delete:focus,
+.delete:hover {
+    border: 1px solid rgb(17, 168, 255);
+    box-shadow: 0 0 0 1px rgb(17, 168, 255);
+}
