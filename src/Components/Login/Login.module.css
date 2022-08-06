@@ -8,8 +8,8 @@
 .login::before{
     display: block;
     content: '';
-    background: url('../../Assets/cat-g9364c75e9_1280.png')no-repeat center center;
-
+    background: url('../../Assets/cat-g9364c75e9_1280.png')no-repeat center top;
+    margin-top: 4rem;
 }
 .forms {
     max-width: 30rem;

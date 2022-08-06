@@ -19,7 +19,7 @@ const UserHeader = () => {
         setTitle('Estatisticas')
         break;
         default:
-          setTitle('Minha Fotos')
+          setTitle('Minhas Fotos')
     }
     
   },[location])
