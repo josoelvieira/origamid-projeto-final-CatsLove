@@ -42,7 +42,7 @@ const UserHeaderNav = () => {
                     to="/conta"
                     end
                     exact="true"
-                    activeclassName={styles.active}
+                    activeclassname={styles.active}
                 >
                     <MinhasFotos />
                     {mobile && "Fotos"}
@@ -50,7 +50,7 @@ const UserHeaderNav = () => {
                 <NavLink
                     to="/conta/estatisticas"
                     exact="true"
-                    activeclassName={styles.active}
+                    activeclassname={styles.active}
                 >
                     <Estats />
                     {mobile && "Estatisticas"}
@@ -58,7 +58,7 @@ const UserHeaderNav = () => {
                 <NavLink
                     to="/conta/postar"
                     exact="true"
-                    activeclassName={styles.active}
+                    activeclassname={styles.active}
                 >
                     <EnviarAdd />
                     {mobile && "Add foto"}
