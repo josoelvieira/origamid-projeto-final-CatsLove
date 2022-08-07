@@ -7,7 +7,7 @@ import useForm from "../../Hooks/useForm";
 import { UserContext } from "../../UserContext";
 import { useContext } from "react";
 import styles from "./LoginForm.module.css";
-import stylesBtn from '../Forms/Button.module.css'
+import stylesBtn from "../Forms/Button.module.css";
 
 const LoginForm = () => {
     const username = useForm();
@@ -44,7 +44,7 @@ const LoginForm = () => {
                 ) : (
                     <Button>Entrar</Button>
                 )}
-                <Error error={error} />
+                <Error error={error && "Dados incorretos"} />
             </form>
             <Link className={styles.perdeu} to="/login/perdeu">
                 Esqueceu a senha?
