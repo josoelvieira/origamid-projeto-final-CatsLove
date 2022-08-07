@@ -38,22 +38,27 @@ const UserHeaderNav = () => {
                     mobileMenu && styles.navMobileActive
                 }`}
             >
-                <NavLink to="/conta" end exact activeClassName={styles.active}>
+                <NavLink
+                    to="/conta"
+                    end
+                    exact="true"
+                    activeclassName={styles.active}
+                >
                     <MinhasFotos />
                     {mobile && "Fotos"}
                 </NavLink>
                 <NavLink
                     to="/conta/estatisticas"
-                    exact
-                    activeClassName={styles.active}
+                    exact="true"
+                    activeclassName={styles.active}
                 >
                     <Estats />
                     {mobile && "Estatisticas"}
                 </NavLink>
                 <NavLink
                     to="/conta/postar"
-                    exact
-                    activeClassName={styles.active}
+                    exact="true"
+                    activeclassName={styles.active}
                 >
                     <EnviarAdd />
                     {mobile && "Add foto"}
