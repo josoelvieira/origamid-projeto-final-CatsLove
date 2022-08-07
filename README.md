@@ -1,4 +1,4 @@
-Projeto baseado no projeto final origamid!
+Projeto baseado no projeto final React origamid!
 Preview
 https://catslove.vercel.app/
 
