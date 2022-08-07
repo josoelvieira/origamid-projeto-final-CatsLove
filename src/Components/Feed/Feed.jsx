@@ -6,10 +6,15 @@ import { useEffect } from "react";
 
 const Feed = ({ user }) => {
     const [modalPhoto, setModalPhoto] = useState(null);
-    const [page, setPage] = useState([1, 2]);
+    const [page, setPage] = useState([1]);
     useEffect(() => {
         function infiniteScroll(event) {
-            console.log(event);
+          const scroll = window.scrollY
+          const height = document.body.offsetHeight - window.innerHeight
+          if(scroll > height * 0.75) {
+            console.log(true)
+          }
+          //setPage((page) => [...page, page.length + 1 ])
         }
         window.addEventListener("wheel", infiniteScroll);
         window.addEventListener("scroll", infiniteScroll);
