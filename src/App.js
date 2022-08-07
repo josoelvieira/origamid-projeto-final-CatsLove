@@ -9,6 +9,7 @@ import User from './Components/User/User';
 import Photo from './Components/Photo/Photo';
 import UserProfile from './Components/User/UserProfile';
 import NotFound from './Components/NotFound';
+//import { Helmet } from 'react-helmet';
 //import ProtectedRoute from './Components/Helper/ProtectedRoute';
 
 
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <UserStorage>
      <Header />
+     <main className='Appbody'>
      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="login/*" element={<Login />} />
@@ -26,6 +28,7 @@ function App() {
       <Route path='perfil/:user' element={<UserProfile/>}/>
       <Route path='*' element={<NotFound/>}/>
      </Routes>
+     </main>
      <Footer />
      </UserStorage>
     </div>
